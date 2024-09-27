@@ -3,6 +3,10 @@ import { hightlightsSlides } from "../constants"
 import gsap from "gsap";
 import { pauseImg, playImg, replayImg } from "../utils";
 import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
+
 
 
 
@@ -33,12 +37,26 @@ const VideoCarousel = () => {
     }, [StartPlay,videoId,isPlaying,loadedData])
 
     const handleLoadededMetadata=(i,e)=> setLoadedData((pre)=>[...pre,e])
+
     useEffect(() => {
         const currentProgress=0;
-        let span=videoSpanRef.current;;
+        let span=videoSpanRef.current;
         if(span[videoId]){
             let anim=gsap.to(span[videoId],{
                 onUpdate:()=>{
+                    const progress=math.cell(anim.currentProgress()*100);
+                    if(progress!=currentProgress){
+                        currentProgress=progress;
+                    
+                        gsap.to(videoDivRef.current[videoId],{
+                            width:innerWidth < 760 ? '10vw' : window.innerWidth < 1200 ? '10vw' 
+                            :'4vw'
+                        })
+                        gsap.to(span[videoId],{
+                            width:`${currentProgress}%`,
+                            backgroundColor:'white'
+                        })
+                    }
                 },
                 onComplete:()=>{
 
@@ -65,28 +83,22 @@ const VideoCarousel = () => {
                 break;
         }
 
-    }
-    useGSAP(()=>{
-        gsap.to('#video'),{
-           scrollTrigger:{
-                trigger:'#video',
-                toggleActions:'restart none none none'
-
+     }
+     useGSAP(() => {
+        gsap.to('#video', {
+            scrollTrigger: {
+                trigger: '#video',
+                toggleActions: 'restart none none none',
+                onEnter: () => {
+                    setVideo((prev) => ({
+                        ...prev,
+                        StartPlay: true,
+                        isPlaying: true,
+                    }));
+                },
             },
-            onComplete:()=>{
-                setVideo((prev)=>({
-                    ...prev,
-                    StartPlay:true,
-                    isPlaying:true,
-                })
-                )
-            }
-           
-
-        }
-
-
-    },[isEnd,videoId])
+        });
+    }, [isEnd, videoId]);
     
   
   return (
