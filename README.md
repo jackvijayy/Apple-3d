@@ -12,10 +12,9 @@
     <img src="https://shields.io/badge/react-black?logo=react&style=for-the-badge" />
     <img src="https://img.shields.io/badge/Three.js-000000?style=for-the-badge&logo=three.js&logoColor=white" />
     <img src="https://img.shields.io/badge/-Tailwind_CSS-black?style=for-the-badge&logoColor=white&logo=tailwindcss&color=06B6D4" alt="tailwindcss" />
-    <img src="https://img.shields.io/badge/Redux/toolkit-v1.8.1-blue" />
   </div>
   
-  <h3 align="center">SUMZ- Article Summarizer </h3>
+  <h3 align="center">Iphone-3d </h3>
 
   ## 📋 <a name="table">Table of Contents</a>
 
@@ -29,7 +28,7 @@
 
 ## <a name="introduction">🤖 Introduction</a>
 
-In this awesome project,I created artocle summarizer using chatgpt.i loved the challenges i faceed during this project developement also this project enhancing my  technical kowleadge i also like comprehensive projects like this,i hope you this project will enhancing your core skills.now talk about few more down ok. Be cool !
+In this awesome project,I created iphone 14 pro page using three js and gsap with stunnig animation with 3d-models.i loved the challenges i faceed during this project developement also this project enhancing my  technical kowleadge i also like comprehensive projects like this,i hope you this project will enhancing your core skills.now talk about few more down ok. Be cool !
 
 
 
@@ -37,16 +36,17 @@ In this awesome project,I created artocle summarizer using chatgpt.i loved the c
 
 - react.js
 - Tailwind css
-- Redux
-- chatgpt
+- three js
+- gsap
+- figma
 
 ## <a name="features">🔋 Features</a>
 
-👉 **summarize the article**:
+👉 **Interactive 3d-models**:
 
-👉 **Give short and useful one**
+👉 **Stunning animations**
 
-👉 **Easy to underStand**:
+👉 **optimize SEO**:
 
 ## <a name="quick-start">🤸 Quick Start</a>
 
